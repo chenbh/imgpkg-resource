@@ -10,6 +10,8 @@ Concourse [resource][concourse-resource] for pulling and pushing
 
 - `tag`: *Optional* A tag to monitor or push bundles to, e.g. `v1.0.1`
 
+- `prereleases`: *Optional* Allow pre-release versions. Default false.
+
 - `username` and `password`: *Optional* A username and password to use when
   authenticating to the registry.
 

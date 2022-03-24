@@ -129,18 +129,9 @@ func checkRepository(repo name.Repository, source Source, from *Version, opts ..
 			}
 
 			pre := ver.Prerelease()
-			if pre != "" {
-				// contains additional variant
-				if strings.Contains(pre, "-") {
-					continue
-				}
-
-				if !strings.HasPrefix(pre, "alpha") &&
-					!strings.HasPrefix(pre, "beta") &&
-					!strings.HasPrefix(pre, "rc") {
-					// additional variant, not a prerelease segment
-					continue
-				}
+			if !source.PreReleases && pre != "" {
+				// source configured to ignore pre-releases
+				continue
 			}
 
 			if cursorVer != nil && (cursorVer.GreaterThan(ver) || cursorVer.Equal(ver)) {

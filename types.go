@@ -1,8 +1,9 @@
 package resource
 
 type Source struct {
-	Repository string `json:"repository"`
-	Tag        string `json:"tag"`
+	Repository  string `json:"repository"`
+	Tag         string `json:"tag"`
+	PreReleases bool   `json:"prereleases"`
 
 	Username string `json:"username"`
 	Password string `json:"password"`
